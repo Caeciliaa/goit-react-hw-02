@@ -38,9 +38,15 @@ export default function App() {
         resetFeedback={resetFeedback}
         totalFeedback={totalFeedback}
       />
-      {totalFeedback > 0 ? <Feedback feedback={feedback} /> : <Notification />}
-      {totalFeedback > 0 && <p>Total feedback: {totalFeedback}</p>}
-      {positiveFeedback > 0 && <p>Positive: {positiveFeedback}%</p>}
+      {totalFeedback > 0 ? (
+        <Feedback
+          feedback={feedback}
+          totalFeedback={totalFeedback}
+          positiveFeedback={positiveFeedback}
+        />
+      ) : (
+        <Notification />
+      )}
     </div>
   );
 }
